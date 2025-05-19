@@ -62,10 +62,11 @@ export async function updateInvoice(id: string, formData: FormData) {
   });
 
   if (!validatedFields.success) {
-    return {
+    /*return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: "Missing Fields. Failed to Update Invoice.",
-    };
+    };*/
+    throw new Error("Missing Fields. Failed to Update Invoice.");
   }
   const { customerId, amount, status } = validatedFields.data;
   console.log("Update Invoice:", { id, customerId, amount, status });
