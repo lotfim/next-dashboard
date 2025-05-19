@@ -8,7 +8,7 @@ export default async function Page({
 }: {
   params: { id: string };
 }) {
-  params = await params;  
+  //params = await params;  
   const id =  params.id;
   
     const [invoice, customers] = await Promise.all([
