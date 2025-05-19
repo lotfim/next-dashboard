@@ -3,9 +3,13 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
 import { DeleteInvoice } from "@/app/ui/invoices/buttons";
 
-export default async function Page({ params }: { params: { id: string } }) {
-  // params = await params;
-  const id = params.id;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const param = await params;
+  const id = param.id;
   const invoice = fetchInvoiceById(id);
 
   if (!invoice) {
