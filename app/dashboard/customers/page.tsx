@@ -4,6 +4,7 @@ import { lusitana } from "@/app/ui/fonts";
 import { Suspense } from "react";
 import { fetchCustomersPages } from "@/app/lib/data";
 import CustomersTable from "@/app/ui/customers/table";
+import { CustomersTableSkeleton } from "@/app/ui/skeletons";
 
 export default async function Page({
   searchParams,
